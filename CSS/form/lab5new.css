@@ -1,0 +1,16 @@
+#p1{
+    border-width:2px;
+    border-style:solid;
+}
+#p2{
+    border-width:2px 6px 9px 12px;
+    border-style:dotted;
+}
+#p3{
+    border-left:6px;
+    border-color:#230000;
+}
+#p4{
+    border-left:6px solid red;
+    padding:10px;
+}

@@ -1,0 +1,27 @@
+input[type="text"]{
+    color:#00ff00;
+}
+input[type="text"]:focus{
+    color:#ff0000;
+}
+input[type="submit"]:hover{
+    background-color:#665544;
+    color:#ffffff;
+}
+input[type="submit"]:active{
+    background-color:#10207e;
+    color:#ffffff;
+}
+#div1{
+    width:300px;
+    height:400px;
+    background-color:lightgreen;
+    border:2px solid #000000;
+    box-shadow:10px 10px 10px lightgreen;
+}
+#div2{
+    width:400px;
+    height:400px;
+    background-color:darkcyan;
+    box-shadow:5px 5px green, 10px 10px red, 15px 15px blue;
+}

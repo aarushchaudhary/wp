@@ -1,0 +1,58 @@
+body {
+    background-color:rgb(200,200,200);
+}
+h1 {
+    background-color:darkcyan;
+    font-family:arial;
+    color:rgb(255,255,255);
+    text-transform:uppercase;
+    text-align:center;
+    text-shadow:2px 2px 1px #000000;
+}
+h2 {
+    background-color:#EE3E80;
+    font-family:georgia;
+    font-size:1.7em;
+    color:rgb(255,255,255);
+    text-transform:lowercase;
+}
+p {
+    padding:20px;
+    font-family:"monotype corsiva";
+    background-color:white;
+    color:rgb(200,200,200);
+    text-decoration:overline;
+    line-height:1.3em;
+    letter-spacing:0.4em;
+}
+ul {
+    font-family:impact;
+    font-weight:bold;
+    font-style:oblique;
+    font-size:32px;
+    word-spacing:1.2em;
+}
+ol {
+    font-family:courier;
+    font-size:32px;
+    text-transform:capitalize;
+    text-align:justify;
+    background-size:cover;
+}
+p#para6:first-letter {
+    font-size:200%;
+}
+a:link {
+    color:deeppink;
+    text-decoration:none;
+}
+a:visited {
+    color:green;
+}
+a:hover {
+    color:yellow;
+    text-decoration:underline;
+}
+a:active {
+    color:red;
+}

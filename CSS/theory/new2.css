@@ -1,0 +1,28 @@
+td{
+    border:2px solid #0088dd;
+    padding:15px;
+}
+.one{
+    empty-cells:show;
+    border-spacing:10px 20px;
+}
+.two{
+    empty-cells:hide;
+    border-collapse:collapse;
+}
+fieldset{
+    width:400px;
+    border-radius:5px;
+    padding:20px;
+    text-align:right;
+}
+legend{
+    background-color:#efefef;
+    border:2px solid #dcdcdc;
+    border-radius:5px;
+    padding:5px 10px;
+    text-transform:uppercase;
+}
+a{
+    cursor:url('smile.png'),pointer;
+}
