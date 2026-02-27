@@ -1,0 +1,35 @@
+/*body{
+    font-family:Arial;
+    width:750px;
+    color:#665544;
+}
+h1{
+    background-color:#EFEFEF;
+    padding:10px;
+    position:fixed;
+    top:0;
+    left:10px;
+    width:100%;
+}
+p{
+    width:500px;
+    margin-top:300px;
+}
+#p2{
+    position:relative;
+    top:20px;
+    left:120px;
+}
+*/
+
+blockquote{
+    float:right;
+    width:250px;
+    font-size:130%;
+    font-style:italic;
+    font-family:georgia;
+    margin:0px 0px 10px 10px;
+    border-top:2px solid #2FA4A9;
+    border-bottom:2px solid #2FA4A9;
+    padding:10px;
+}

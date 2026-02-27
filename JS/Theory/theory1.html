@@ -1,0 +1,84 @@
+<html>
+    <script>
+        var a_n=[]
+        a_n[0]="Jaami"
+        a_n[1]="Kevin"
+        a_n[2]="Aarush"
+        a_n[3]="Anmol"
+        document.write("The content of a_n[0] is "+a_n[0]+"<br/>")
+        document.write("The content of a_n[1] is "+a_n[1]+"<br/>")
+        document.write("The content of a_n[2] is "+a_n[2]+"<br/>")
+        document.write("The content of a_n[3] is "+a_n[3]+"<br/>")
+        for (var i=0; i<=3; i++)
+        {
+            document.write("The content of a_n["+i+"] is "+a_n[i]+"<br/>")
+        }
+        document.write("<hr/>")
+        var x=[];
+        x[0]=[];
+        x[0][0]="A";
+        x[0][1]="B";
+        x[0][2]="C";
+        x[1]=[];
+        x[1][0]="D";
+        x[1][1]="E";
+        x[1][2]="F";
+        x[2]=[];
+        x[2][0]="G";
+        x[2][1]="H";
+        x[2][2]="I";
+        for(var i=0; i<3; i++)
+        {
+            for(var j=0; j<3; j++)
+            {
+                document.write(x[i][j])
+            }
+            document.write("<br/>")
+        }
+        document.write("<hr/>")
+        var y = prompt("Enter your age ",10);
+        switch(y)
+        {
+            case '18':
+                document.write("Just adult");
+                break;
+            case '21':
+                document.write("Eligible for everything");
+                break;
+            default:
+                document.write("Not eligible for anything");
+                break;
+        }
+        document.write("<hr/>")
+        var a=[21,22,33,56]
+        var b=[]
+        for (var i=0; i<=3; i++)
+        {
+            if(a[i]%2==0)
+            {
+                b[i]="even"
+            }
+            else
+            {
+                b[i]="odd"
+            }
+        }
+        for (var i=0; i<=3; i++)
+        {
+            document.write(b[i])
+        }
+        document.write("<hr/>")
+        var drinks=['tea','lemonade','sherbat','water']
+        var c;
+        for (c in drinks)
+            document.write(drinks[c]+" ")
+        for (c of drinks)
+            document.write(c+" ")
+        document.write("<hr/>")
+        var count = 1
+        do {
+            document.write(count+"<br/>")
+            count++
+        } while (count<=10)
+    </script>
+</html>
