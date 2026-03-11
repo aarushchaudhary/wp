@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Get browser info</title>
+    </head>
+    <body>
+        <script>
+            function getBrowserName(){
+                var isBrowser = navigator.userAgent;
+
+                if (isBrowser.indexOf("MSIE")>=0){
+                    return "MSIE";
+                } else if (isBrowser.indexOf("Firefox")>=0){
+                    return "Firefox";
+                } else if (isBrowser.indexOf("Chrome")>=0){
+                    return "Chrome";
+                } else if (isBrowser.indexOf("Safari")>=0){
+                    return "Safari";
+                } else if (isBrowser.indexOf("Opera")>=0){
+                    return "Opera";
+                } else{
+                    return "Unknown";
+                }
+            }
+            function getBrowserVersion(){
+                var ua = navigator.userAgent;
+                var browser = getBrowserName();
+                var findIndex = ua.indexOf(browser)+browser.length+1;
+                var browserVersion=parseFloat(ua.substring(findIndex,findIndex+3));
+
+                return browserVersion;
+            }
+            var browserName=getBrowserName();
+            var browserVersion=getBrowserVersion();
+            document.write(browserName+"<br/>"+browserVersion+"<br/>");
+            if(browserName=="MSIE"){
+                if (browserVersion<9){
+                    document.write("Your version of Internet Explorer is too old");
+                }else{
+                    document.write("Your version of Internet Explorer is full supported");
+                }
+            } else if (browserName=="Firefox"){
+                document.write("Firefox is fully supported");
+            }
+        </script>
+    </body>
+</html>
