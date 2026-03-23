@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js">
+        </script>
+    </head>
+    <body>
+        <form ng-app="" name="myForm" ng-init="myText = 'abc.xyz@nmims.edu'">
+            <p>Edit the email address, and try to change the status</p>
+            Email:
+            <input type="email" name="myAddress" ng-model="myText" required>
+            <h1>Status</h1>
+            <p>Valid: {{myForm.myAddress.$valid}} (if true, the value meets all the criteria)</p>
+            <p>Dirty: {{myForm.myAddress.$dirty}} (if true, the value has been changed)</p>
+            <p>Touched: {{myForm.myAddress.$touched}} (if true, the field has been in focus)</p>
+        </form>
+    </body>
+</html>

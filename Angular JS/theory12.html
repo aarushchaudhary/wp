@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Form Validation Angular JS</title>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-app>
+        <h2>Registration Form</h2>
+        <form name="myRegForm">
+            <p>First Name: <input type="text" ng-model="usr.fname" required></p>
+            <p>Last Name: <input type="text" ng-model="usr.lname" required></p>
+            <p>Email: <input type="email" ng-model="usr.mail" required></p>
+            <p>Mobile: <input type="number" ng-model="usr.mobile" min="6000000000" max="9999999999" required></p>
+            <p>Age: <input type="number" ng-model="usr.age" min="18" required></p>
+            <button ng-disabled="myRegForm.$invalid">Submit</button>
+        </form>
+        <p><strong>Form Status:</strong>{{ myRegForm.$valid ? "Valid" : "Invalid" }}</p>
+    </body>
+</html>

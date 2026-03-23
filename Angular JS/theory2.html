@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js">
+        </script>
+    </head>
+    <body ng-app = "myapp">
+        <div ng-controller = "HelloController">
+            <h2>Dear students Welcome to the world of {{helloT}} !</h2>
+        </div>
+        <script>
+            angular.module("myapp",[])
+            .controller("HelloController",function($scope){
+                $scope.helloTo = "Fun";
+                $scope.helloT = "AngularJS";
+            });
+        </script>
+    </body>
+</html>

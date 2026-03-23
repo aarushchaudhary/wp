@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Angular JS Table</title>
+        <script src="./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <h2>Angular JS Table Application</h2>
+        <div ng-app = "mainApp" ng-controller = "studentController">
+            <table border = "1">
+                <tr>
+                    <th>Enter first name: </th>
+                    <td><input type = "text" ng-model = "student.firstname"></td>
+                </tr>
+                <tr>
+                    <th>Enter last name: </th>
+                    <td><input type = "text" ng-model = "student.lastname"></td>
+                </tr>
+                <tr>
+                    <th>Enter fees in dollar: </th>
+                    <td><input type = "text" ng-model = "student.feesD"></td>
+                </tr>
+                <tr>
+                    <th>Enter fees in rupees: </th>
+                    <td><input type = "text" ng-model = "student.feesR"></td>
+                </tr>
+                <tr>
+                    <th>Enter subject: </th>
+                    <td><input type = "text" ng-model = "subjectname"></td>
+                </tr>
+            </table>
+            <br/>
+            <table border = "1">
+                <tr>
+                    <th>Name in uppercase: </th>
+                    <td>{{ student.fullname() | uppercase }}</td>
+                </tr>
+                <tr>
+                    <th>Name in lowercase: </th>
+                    <td>{{ student.fullname() | lowercase }}</td>
+                </tr>
+                <tr>
+                    <th>Fees($): </th>
+                    <td>{{ student.feesD | currency }}</td>
+                </tr>
+                <tr>
+                    <th>Fees(₹): </th>
+                    <td>{{ student.feesR | currency:"&#8377;" }}</td>
+                </tr>
+                <tr>
+                    <th>Subject: </th>
+                    <td>
+                        <table border="1">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                            </tr>
+                            <tr ng-repeat="subject in student.subjects">
+                                <td>{{subject.name}}</td>
+                                <td>{{subject.marks}}</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            var mainApp = angular.module("mainApp",[])
+            mainApp.controller("studentController", function($scope){
+                $scope.student = {
+                    firstname: "Aarush",
+                    lastname: "Chaudhary",
+                    feesD: 2200,
+                    feesR: 202000,
+                    subjects: [
+                        {name: "Web Programming", marks: 99},
+                        {name: "Database Management System", marks: 95},
+                        {name: "Data Handling and Visualization", marks: 97},
+                        {name: "Machine Learning", marks: 89},
+                        {name: "Introduction to Data, Signal and Image Analysis", marks: 93}
+                    ],
+                    fullname: function() {
+                        var studentObj;
+                        studentObj = $scope.student;
+                        return studentObj.firstname + " " + studentObj.lastname;
+                    }
+                };
+            });
+        </script>
+    </body>
+</html>

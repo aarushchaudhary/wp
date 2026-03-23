@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Direcctives Revisited</title>
+        <script src="./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="" ng-init="names=[
+            {name: 'Aarush', country: 'India'},
+            {name: 'Paridhi', country: 'India'},
+            {name: 'Kevin', country: 'Canada'},
+            {name: 'Anmol', country: 'Bangladesh'},
+            {name: 'Anaaya', country: 'UAE'}
+            ];">
+            <p>Looping with objects: </p><!--Ascending-->
+            <ul>
+                <li ng-repeat = "x in names | orderBy: 'country'">
+                    {{x.name+', '+x.country}}
+                </li>
+            </ul>
+            <p>Looping with objects: </p><!--Descending-->
+            <ul>
+                <li ng-repeat = "x in names | orderBy: '-country'">
+                    {{x.name+', '+x.country}}
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>

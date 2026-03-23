@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Number Validation</title>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-app="numberValidationApp" ng-controller="numberValidationCtrl">
+        <h2>Number Validation</h2>
+        <form name="numberForm">
+            <label>Enter a number:</label>
+            <input type="text" ng-model="number" name="number" ng-pattern="/^[0-9]*$/" required></input>
+            <span ng-show="numberForm.number.$error.pattern">Please enter a valid number.</span>
+            <br><br>
+            <button ng-disabled="numberForm.$invalid">Submit</button>
+        </form>
+        <script>
+            var app = angular.module('numberValidationApp',[]);
+            app.controller('numberValidationCtrl',function($scope){
+                $scope.number='';
+            });
+        </script>
+    </body>
+</html>

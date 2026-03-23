@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="customersCtrl">
+            <ul>
+                <li ng-repeat="x in myData">
+                    {{ x.Name + ', ' + x.City + ', ' + x.State }}
+                </li>
+            </ul>
+        </div>
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('customersCtrl',function($scope,$http){
+                $http.get('sample.json').then(function(response){
+                    $scope.myData=response.data.records;
+                });
+            });
+        </script>
+    </body>
+</html>

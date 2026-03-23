@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js">
+        </script>
+    </head>
+    <body>
+        <p>Enter your email address</p>
+        <p>Angular JS will display an error if the address is not an email.</p>
+
+        <form ng-app="" name="myForm">
+            Email:
+            <input type="email" name="myAddress" ng-model="text">
+            <span ng-show="myForm.myAddress.$error.email">Not a valid email address</span>
+        </form>
+    </body>
+</html>

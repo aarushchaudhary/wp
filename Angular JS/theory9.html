@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Angular JS Filters</title>
+        <script src="./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <h2>Angular JS Filter Application</h2>
+        <div ng-app = "mainApp" ng-controller = "studentController">
+            <table border = "0">
+                <tr>
+                    <td>Enter first name: </td>
+                    <td><input type = "text" ng-model = "student.firstname"></td>
+                </tr>
+                <tr>
+                    <td>Enter last name: </td>
+                    <td><input type = "text" ng-model = "student.lastname"></td>
+                </tr>
+                <tr>
+                    <td>Enter fees in dollar: </td>
+                    <td><input type = "text" ng-model = "student.feesD"></td>
+                </tr>
+                <tr>
+                    <td>Enter fees in rupees: </td>
+                    <td><input type = "text" ng-model = "student.feesR"></td>
+                </tr>
+                <tr>
+                    <td>Enter subject: </td>
+                    <td><input type = "text" ng-model = "subjectname"></td>
+                </tr>
+            </table>
+            <br/>
+            <table border = "0">
+                <tr>
+                    <td>Name in uppercase: </td>
+                    <td>{{ student.fullname() | uppercase }}</td>
+                </tr>
+                <tr>
+                    <td>Name in lowercase: </td>
+                    <td>{{ student.fullname() | lowercase }}</td>
+                </tr>
+                <tr>
+                    <td>Fees($): </td>
+                    <td>{{ student.feesD | currency }}</td>
+                </tr>
+                <tr>
+                    <td>Fees(₹): </td>
+                    <td>{{ student.feesR | currency:"&#8377;" }}</td>
+                </tr>
+                <tr>
+                    <td>Subject: </td>
+                    <td>
+                        <ul>
+                            <li ng-repeat = "subject in student.subjects | filter: subjectname | orderBy: 'marks'">
+                                {{ subject.name + ": " + subject.marks }}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            var mainApp = angular.module("mainApp",[])
+            mainApp.controller("studentController", function($scope){
+                $scope.student = {
+                    firstname: "Aarush",
+                    lastname: "Chaudhary",
+                    feesD: 2200,
+                    feesR: 202000,
+                    subjects: [
+                        {name: "Web Programming", marks: 99},
+                        {name: "Database Management System", marks: 95},
+                        {name: "Data Handling and Visualization", marks: 97}
+                    ],
+                    fullname: function() {
+                        var studentObj;
+                        studentObj = $scope.student;
+                        return studentObj.firstname + " " + studentObj.lastname;
+                    }
+                };
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js">
+        </script>
+        <style>
+            input.ng-invalid {
+                background-color: red;
+                color: white;
+            }
+            input.ng-valid {
+                background-color: green;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Enter your email address</p>
+        <p>Angular JS will display an error message if the address is not an email</p>
+        <form ng-app="" name="myForm">
+            Email:
+            <input type="email" name="myAddress" ng-model="text">
+            <span ng-show="myForm.myAddress.$error.email">Not a valid email address</span>
+        </form>
+    </body>
+</html>
+

@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <p>The URL of this page is:</p>
+            <h3>{{myUrl}}</h3>
+        </div>
+        <p>This example uses built in $location service to get the abosulte url of your program</p>
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('myCtrl',function($scope,$location){
+                $scope.myUrl=$location.absUrl();
+            });
+        </script>
+    </body>
+</html>
