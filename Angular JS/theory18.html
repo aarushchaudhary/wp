@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Angular JS Dependency Injecttion</title>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myController">
+            <p>Enter a number: <input type="number" ng-model="number"/></p>
+            <button ng-click = "addition()">Result</button>
+            <p>Result:{{result}}</p>
+        </div>
+        <script>
+            var demo=angular.module("myApp",[]);
+            demo.config(function($provide){
+                $provide.provider('MathService',function(){
+                    this.$get=function(){
+                        var factory={};
+                        factory.sum=function(a,b){
+                            return a+b;
+                        }
+                        return factory;
+                    };
+                });
+            });
+            demo.value("defaultInput",10);
+            demo.factory('MathService',function(){
+                var factory={};
+                factory.sum=function(a,b){
+                    return a+b;
+                }
+                return factory;
+            });
+            demo.service('demoService',function(MathService){
+                this.addition=function(a){
+                    return MathService.sum(a,a);
+                }
+            });
+            demo.controller('myController',function($scope,demoService,defaultInput){
+                $scope.number=defaultInput;
+                $scope.result=demoService.addition($scope.number);
+                $scope.addition=function(){
+                    $scope.result=demoService.addition($scope.number);
+                }
+            });
+        </script>
+    </body>
+</html>

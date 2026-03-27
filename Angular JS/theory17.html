@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <div ng-app="serviceApp" ng-controller="serviceController">
+        <p>Result: {{result}}</p>
+    </div>
+    <script>
+        var t = angular.module("serviceApp",[]);
+        t.service('sum',function(){
+            this.addition=function(x,y){
+                return x+y;
+            }
+        });
+        t.controller('serviceController',function($scope,sum){
+            $scope.result=sum.addition(5,6);
+        });
+    </script>
+</html>

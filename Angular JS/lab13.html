@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-app="">
+        <form id="form1">
+            <div>
+                <input ng-keydown="increment=increment+1" ng-init="increment=0">
+                Key down increment: {{increment}}
+                <br/>
+                <br/>
+                <input ng-keyup="upincrement=upincrement+1" ng-init="upincrement=0">
+                Key up increment: {{upincrement}}
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body ng-app="" ng-init="x=0">
+        <input ng-focus="x=x+1"/>
+        <h3>You focused input</h3>
+        <h1>{{x}}</h1>
+        <p>The value of "x" increases every time the input field gets focus.</p>
+    </body>
+</html>

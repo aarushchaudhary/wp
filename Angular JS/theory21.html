@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <p>Click on Button to increase the Total Count.</p>
+        <div ng-app="App1" ng-controller="Ctrl1">
+            <button ng-click="count = count + 1">Click Me</button>
+            <h2>Total Count:</h2>
+            <h2>{{count}}</h2>
+        </div>
+        <script>
+            var app = angular.module('App1',[]);
+            app.controller('Ctrl1',function($scope){
+                $scope.count=0;
+            });
+        </script>
+    </body>
+</html>

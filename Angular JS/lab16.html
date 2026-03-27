@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+    </head>
+    <style>
+        .pinkDiv{
+            width:100px;
+            height:70px;
+            background-color:pink;
+            padding:2px 2px 2px 2px;
+        }
+        .lightblueDiv{
+            width:120px;
+            height:100px;
+            background-color:lightblue;
+            padding:2px 2px 2px 2px;
+        }
+    </style>
+    <body ng-app="">
+        <h1>AngularJS Mouse Events</h1>
+        <div ng-class="{pinkDiv:enter, lightblueDiv:leave}"
+            ng-mouseenter="x=x+1;enter=true;leave=false;"
+            ng-mouseleave="enter=false;leave=true;">
+            Mouse
+            <span ng-show="enter">Enter color changes to pink</span>
+            <span ng-show="leave">Leave color changes to lightblue</span>
+            <p>{{x}}</p>
+        </div>
+    </body>
+</html>

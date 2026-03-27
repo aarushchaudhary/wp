@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src = "./angular-1.8.2/angular.min.js"></script>
+        <title>ng-change Directive</title>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <h2>ng-change Directive</h2>
+            Check to show/hide details
+            <input type="checkbox" ng-change="show()" ng-model="check">
+            <br/>
+            <div ng-show="result">
+                This demonstrate the use of ng-change directive.
+            </div>
+        </div>
+    </body>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.show=function(){
+                if($scope.check==true)
+                    $scope.result=true;
+                else
+                    $scope.result=false;
+            }
+        });
+    </script>
+</html>
